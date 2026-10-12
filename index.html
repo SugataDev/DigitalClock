@@ -1,43 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Clock</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body
-    class="bg-black text-white h-screen flex flex-col justify-center items-center select-none p-4"
-  >
-    <div class="flex items-baseline justify-center font-digital">
-      <div
-        id="clock"
-        class="text-7xl sm:text-8xl md:text-9xl tracking-widest font-medium glow-text"
-      >
-        00:00:00
-      </div>
-      <div
-        id="ampm"
-        class="text-xl sm:text-2xl md:text-3xl ml-4 font-text text-gray-400 font-medium tracking-wide uppercase hidden"
-      >
-        --
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Alarm Clock</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Digital clock font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+        rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="overflow-x-hidden">
+
+  <main class="flex min-h-screen w-full items-center justify-center px-4">
+
+    <div class="relative">
+
+      <!-- Handle -->
+      <div class="handle"></div>
+
+      <!-- Alarm bells -->
+      <div class="bell left"></div>
+      <div class="bell right"></div>
+
+      <!-- Bell pins -->
+      <div class="pin left"></div>
+      <div class="pin right"></div>
+
+      <!-- Hammer -->
+      <div class="hammer"></div>
+
+      <!-- Clock body -->
+      <div class="clock">
+
+        <!-- Display -->
+        <div class="display">
+
+          <!-- Digital time -->
+          <div class="time">
+            <span id="hours">00</span><span class="colon">:</span><span id="minutes">00</span>
+          </div>
+
+          <!-- Weekdays -->
+          <div class="days">
+            <span class="day" data-day="0">Sun</span>
+            <span class="day" data-day="1">Mon</span>
+            <span class="day" data-day="2">Tue</span>
+            <span class="day" data-day="3">Wed</span>
+            <span class="day" data-day="4">Thu</span>
+            <span class="day" data-day="5">Fri</span>
+            <span class="day" data-day="6">Sat</span>
+          </div>
+
+        </div>
+
+        <!-- Legs -->
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+        <div class="foot left"></div>
+        <div class="foot right"></div>
+
       </div>
     </div>
 
-    <div
-      id="date"
-      class="font-text text-gray-400 text-base sm:text-lg md:text-xl font-normal tracking-wide mt-4 mb-10"
-    >
-      Date
-    </div>
+  </main>
 
-    <button
-      id="toggleBtn"
-      class="font-text px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 active:scale-95 text-zinc-300 text-sm font-medium rounded-lg shadow-md transition-all duration-200"
-    >
-      Switch to 12-Hour Format
-    </button>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
